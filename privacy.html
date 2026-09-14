@@ -58,16 +58,16 @@ a { color: #2F6F4E; }
 <p>email address or phone number. When you do sign in, your name and email reach our server inside the token we verify, and are discarded once it is checked - only your Google account identifier is written down. Google treats data as collected whenever it leaves your device, even when it is used and discarded immediately, which is why our Play Data safety declaration lists them</p>
 
 <ul>
-<li>We do not use Android&#x27;s automatic backup, so your receipts are not copied to</li>
+<li>We do not run any sync service. Your receipts are never uploaded to an</li>
 </ul>
 
-<p>Google Drive. Nothing on your phone is synced anywhere unless you export it yourself</p>
+<p>account of ours, and we have no copy of them to restore. On Android we also switch off the operating system&#x27;s automatic backup, so they are not copied to your Google Drive. On iPhone, Apple&#x27;s own iCloud Backup may include them along with the rest of the app&#x27;s data - that backup is between you and Apple, and is what would restore your receipts onto a new phone</p>
 
 <ul>
-<li>We do not collect your location, and we switch off the location lookup our</li>
+<li>We do not collect your location. The app never asks for location access and</li>
 </ul>
 
-<p>analytics provider would otherwise perform from your IP address</p>
+<p>holds no permission to read it. Our analytics provider does receive your IP address, because every request over the internet carries one, but we switch off the lookup it would otherwise use to turn that into a place - we do not see it, store it separately, or do anything with it</p>
 
 <ul>
 <li>We do not access your contacts, photos beyond the ones you choose to scan, or</li>
@@ -107,6 +107,8 @@ a { color: #2F6F4E; }
 
 <p><strong>Google</strong> handles sign-in, if you choose to use it. They see that you signed in to this app. They do not receive your receipts, your budgets or anything about what you bought.</p>
 
+<p><strong>RevenueCat</strong> handles subscriptions, once paid plans are available. When you subscribe, they receive your Google account identifier - the same one described above - along with what you bought, when, and whether it is still active. They do not receive your receipts, your budgets or anything about what you bought in a shop. Their handling is covered by their own privacy policy at revenuecat.com/privacy. Google Play takes the payment itself; neither we nor RevenueCat ever see your card.</p>
+
 <p><strong>Google, again, as our mail provider.</strong> Our support address is a Gmail account, so anything you email us - and anything you choose to attach - is stored in Gmail and readable by us. Please do not email receipt photos unless you mean to.</p>
 
 <p>That is the complete list of services that receive anything.</p>
@@ -117,7 +119,9 @@ a { color: #2F6F4E; }
 
 <p><strong>Your receipts, budgets and categories</strong> live on your device, under your control, until you delete them or remove the app.</p>
 
-<p><strong>Your scan count.</strong> If you sign in, we keep one row - your Google account identifier, a number, and a month - until you delete your account. The equivalent count for your device is kept for the current month and is discarded when the month ends.</p>
+<p><strong>Your scan count.</strong> If you sign in, we keep one row - your Google account identifier, a number, and a month - until you delete your account.</p>
+
+<p><strong>Your subscription status.</strong> If you subscribe, we keep one row recording your Google account identifier and the date your access runs out, so the app knows what allowance to give you. It holds no payment details, because we never receive any. The equivalent count for your device is kept for the current month and is discarded when the month ends.</p>
 
 <p><strong>Usage events</strong> are held by PostHog under their retention policy, attached to a random installation identifier and to nothing else.</p>
 
@@ -131,7 +135,7 @@ a { color: #2F6F4E; }
 
 <p><strong>Delete your usage events.</strong> Settings shows an Installation ID. Email it to <a href="mailto:sales.quoteback@gmail.com">sales.quoteback@gmail.com</a> and we will ask PostHog to delete the events recorded against it. That identifier is the only thing those events are attached to. PostHog processes deletions in the background rather than instantly, so allow a few days.</p>
 
-<p><strong>Stop all collection.</strong> Uninstalling the app removes everything stored on the device, permanently - there is no backup to restore from.</p>
+<p><strong>Stop all collection.</strong> Uninstalling the app removes everything stored on the device. We hold no copy, so nothing can be restored from us - though on iPhone an existing iCloud Backup taken before you uninstalled may still contain it, which is Apple&#x27;s backup rather than ours.</p>
 
 <p>Erasing all data in Settings also issues a new Installation ID. Be clear about what that does and does not do: from then on, usage events are recorded against a new identifier with no link to the old one, but events already sent are still held by PostHog until they are deleted. Use the route above to have those removed as well.</p>
 
